@@ -1,4 +1,8 @@
-# Aira — Voice AI Doctor Appointment Assistant
+# Aira – Voice AI Doctor Appointment Assistant
+
+🚀 **Live Demo:** https://aira-voice-ai-doctor-assistant.vercel.app/
+
+💻 **GitHub Repository:** [View Source Code](YOUR_GITHUB_REPOSITORY_LINK)
 
 A polished clinic dashboard and appointment assistant built for the NexovAI SDE Intern Round 1 assignment.
 
