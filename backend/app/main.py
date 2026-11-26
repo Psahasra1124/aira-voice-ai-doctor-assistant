@@ -12,7 +12,17 @@ from .store import init_db, all_appointments
 from .agent import handle_message, book_appointment, cancel_appointment, check_doctor_availability, elevenlabs_stt, elevenlabs_tts
 
 app = FastAPI(title="Aira Voice Appointment Assistant", version="1.0.0", description="Demo clinic appointment assistant")
-app.add_middleware(CORSMiddleware, allow_origins=["http://localhost:5173", "http://127.0.0.1:5173"], allow_credentials=True, allow_methods=["*"], allow_headers=["*"])
+app.add_middleware(
+    CORSMiddleware,
+    allow_origins=[
+        "http://localhost:5173",
+        "http://127.0.0.1:5173",
+        "https://aira-voice-ai-doctor-assistant.vercel.app"
+    ],
+    allow_credentials=True,
+    allow_methods=["*"],
+    allow_headers=["*"],
+)
 
 @app.on_event("startup")
 def startup():
