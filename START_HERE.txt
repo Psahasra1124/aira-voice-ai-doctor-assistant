@@ -1,0 +1,40 @@
+AIRA - VOICE AI DOCTOR APPOINTMENT ASSISTANT
+
+1) Extract this ZIP.
+2) Open the extracted nexovai-doctor-assistant folder in VS Code.
+3) Backend setup (PowerShell):
+   cd backend
+   python -m venv venv
+   .\venv\Scripts\Activate
+   pip install -r requirements.txt
+   Copy-Item .env.example .env
+4) Edit backend/.env and add your own keys:
+   OPENROUTER_API_KEY=your_openrouter_key
+   OPENROUTER_MODEL=openrouter/free
+   ELEVENLABS_API_KEY=your_elevenlabs_key
+   ELEVENLABS_VOICE_ID=21m00Tcm4TlvDq8ikWAM
+   ELEVENLABS_MODEL_ID=eleven_multilingual_v2
+   LIVE_VOICE_ENABLED=false
+   Keep .env private; never upload it to GitHub.
+5) Start backend from the backend folder:
+   python -m uvicorn app.main:app --reload
+   API docs: http://127.0.0.1:8000/docs
+6) Open a SECOND terminal at frontend:
+   cd frontend
+   npm install
+   npm run dev
+   Open the URL printed by Vite (usually http://localhost:5173).
+7) Keep both terminals running.
+
+LLM NOTE:
+This build uses OpenRouter's OpenAI-compatible chat-completions API and the
+openrouter/free model router. Free model availability and limits can change.
+The app can use demo responses if OPENROUTER_API_KEY is blank, but AI tool
+calling requires a working OpenRouter key/model.
+
+VOICE NOTE:
+ElevenLabs STT/TTS require a valid key with Speech to Text and Text to Speech
+permissions. Browser microphone permission is also required.
+
+This is a demo appointment assistant with mock clinic data, not a real medical
+service. Do not enter real patient data.
